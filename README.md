@@ -28,7 +28,7 @@
 
 ## 2.1. Установка
 ### Результат
-![Меню]()
+![Меню](![image](https://github.com/user-attachments/assets/9cf5ff50-6ab1-49d4-ba0d-d36322fa2231))
 
 ## Выводы
 Установил Git на компьютер
