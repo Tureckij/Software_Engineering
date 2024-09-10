@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/10dfe634-2f04-4752-bfdc-c25cd48cc080)# Тема 1. Введение в Python
+# Тема 1. Введение в Python
 Отчет по Теме #2 выполнил(а):
 - Орлов Данил Александрович
 - ПИЭ-22-2
