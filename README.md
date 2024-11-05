@@ -321,15 +321,96 @@ for shape in shapes:
 ### комментариями и скриншоты выполенния всех тестов.
 
 ```python
-class Animal:
-    def __init__(self, hp):
-        self.hp = hp
+# Класс Томат
+class Tomato:
+    # Статическое свойство с этапами созревания томата
+    states = {0: "отсутствует", 1: "цветение", 2: "зеленый", 3: "красный"}
 
-    def get_hp(self):
-        return self.hp
+    def __init__(self, index):
+        self._index = index  # Уникальный индекс томата
+        self._state = 0  # Начальная стадия созревания - "отсутствует"
 
-my_animal = Animal(5)
-print(my_animal.get_hp())
+    def grow(self):
+        # Переводит томат на следующую стадию, если она не последняя
+        if self._state < 3:
+            self._state += 1
+
+    def is_ripe(self):
+        # Проверка, что томат созрел (на стадии "красный")
+        return self._state == 3
+
+    def get_state(self):
+        # Получение текущей стадии созревания для вывода информации
+        return Tomato.states[self._state]
+
+
+# Класс Куст помидоров
+class TomatoBush:
+    def __init__(self, num_tomatoes):
+        # Создаем список из num_tomatoes объектов Tomato
+        self.tomatoes = [Tomato(index) for index in range(num_tomatoes)]
+
+    def grow_all(self):
+        # Все томаты переходят на следующую стадию созревания
+        for tomato in self.tomatoes:
+            tomato.grow()
+
+    def all_are_ripe(self):
+        # Проверка, что все томаты созрели
+        return all(tomato.is_ripe() for tomato in self.tomatoes)
+
+    def give_away_all(self):
+        # Очистка списка томатов после сбора урожая
+        self.tomatoes = []
+
+
+# Класс Садовник
+class Gardener:
+    def __init__(self, name, plant):
+        self.name = name  # Имя садовника (публичное свойство)
+        self._plant = plant  # Растение, за которым ухаживает садовник (приватное свойство)
+
+    def work(self):
+        # Ухаживает за растением, переводя томаты на следующую стадию созревания
+        print(f"{self.name} ухаживает за растением...")
+        self._plant.grow_all()
+
+    def harvest(self):
+        # Пытается собрать урожай, если все томаты созрели
+        if self._plant.all_are_ripe():
+            print(f"{self.name} собрал урожай!")
+            self._plant.give_away_all()
+        else:
+            print("Не все томаты созрели. Поработайте еще.")
+
+    @staticmethod
+    def knowledge_base():
+        # Вывод справки по садоводству
+        print("Справка по садоводству: Помидоры требуют регулярного ухода.\n"
+              "Растите их до стадии 'красный', чтобы собрать урожай.\n")
+
+
+# Тесты
+# 1) Вызов справки по садоводству
+Gardener.knowledge_base()
+
+# 2) Создание куст томатов и садовник
+bush = TomatoBush(3)
+gardener = Gardener("Иван", bush)
+
+# 3) Уход за кустом с помидорами
+gardener.work()  # Переводим томаты на следующую стадию
+gardener.work()  # Еще одна стадия
+
+# 4) Попытка собрать урожай, когда томаты еще не созрели
+gardener.harvest()
+
+# Продолжение ухода за кустом
+gardener.work()  # Переводим томаты на последнюю стадию
+
+# 5) Сбор урожая
+gardener.harvest()
+
 ```
 ### Результат.
 
