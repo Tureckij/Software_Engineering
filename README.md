@@ -1,4 +1,4 @@
-# ТЕМА 10. Концепции и принципы ООП
+# ТЕМА 10. Декораторы и исключения
 Отчет по Теме #10 выполнил:
 - Орлов Данил Александрович
 - ПИЭ-22-1
@@ -47,11 +47,11 @@ if __name__ == '__main__':
 ```
 ### Результат.
 
-![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_9/9_module/L1.png)
+![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_10/10_module/L1.png)
 
 ### Выводы
 
-Создали класс угадайка
+Работаем с декораторами
 
 ## Лабораторная работа №2
 Илья пишет свой сайт и ему необходимо сделать минимальную проверку ввода данных пользователя при регистрации. Для этого он
@@ -85,11 +85,11 @@ if __name__ =='__main__':
 ```
 ### Результат.
 
-![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_9/9_module/L2.png)
+![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_10/10_module/L2.png)
 
 ### Выводы
 
-Сделали автоматизацию подсчета изменения цены
+Сделали проверку ввода данных
 
 ## Лабораторная работа №3
 Вам понравилась идея Ильи с сайтом, и вы решили дальше работать вместе с ним. Но вот в вашем проекте появилась проблема, кто-то
@@ -118,11 +118,11 @@ if __name__ == '__main__':
 ```
 ### Результат.
 
-![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_9/9_module/L3.png)
+![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_10/10_module/L3.png)
 
 ### Выводы
 
-Продемонстрировали инкапсуляцию, ошибка из за отсутствия проверки на существование атрибута перед его возвратом
+Работаем с исключениями
   
 ## Лабораторная работа №4
 Продолжая работу над сайтом, вы решили написать собственное
@@ -151,11 +151,11 @@ if __name__ == '__main__':
 ```
 ### Результат.
 
-![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_9/9_module/L4.png)
+![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_10/10_module/L4.png)
 
 ### Выводы
 
-Написал наследование
+Продолжаем работать с исключениями
 
 ## Лабораторная работа №5
 После запуска сайта вы поняли, что вам необходимо добавить логгер,
@@ -192,11 +192,11 @@ if __name__ == '__main__':
 ```
 ### Результат.
 
-![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_9/9_module/L5.png)
+![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_10/10_module/L5.png)
 
 ### Выводы
 
-Реализовал полиморфизм
+Создаем декоратор
 
 ## Самостоятельная работа №1
 Вовочка решил заняться спортивным программированием на python, но
@@ -244,11 +244,11 @@ if __name__ == '__main__':
 ```
 ### Результат.
 
-![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_8/8_module/S1.png)
+![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_10/10_module/S1.png)
 
 ### Выводы
 
-создание объекта с внутренним состоянием (hp) и метод для доступа к этому состоянию.
+Создаем декоратор для ускорения работы программы
   
 ## Самостоятельная работа №2
 Посмотрев на Вовочку, вы также загорелись идеей спортивного
@@ -282,11 +282,11 @@ read_file('non_empty_file.txt')
 ```
 ### Результат.
 
-![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_8/8_module/S2.png)
+![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_10/10_module/S2.png)
 
 ### Выводы
 
-создаем класс Animal с атрибутами здоровья (hp) и голоса (voice). Метод get_hp() возвращает здоровье, а say() — голос животного.
+Создаем проверку на пустой файл и добавляем исключения
   
 ## Самостоятельная работа №3
 Напишите функцию, которая будет складывать 2 и введенное
@@ -318,120 +318,112 @@ add_two_to_input()  # Введите число: "10"  -> Результат: 12
 ```
 ### Результат.
 
-![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_8/8_module/S3.png)
+![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_10/10_module/S3.png)
 
 ### Выводы
 
-Код создает класс Animal с голосом "я пес" и подкласс Dog, который переопределяет голос на "не ем майонез". При создании экземпляров Animal и Dog, их методы say() выводят разные значения.
+Создаем функцию, которая складывает 2 и введенное число и реализуем исключения, если пользователь введет не число
   
 ## Самостоятельная работа №4
 Декоратор, который проверяет, выполнены ли определенные условия перед вызовом функции. Это может быть полезно, если функции нужно передавать только положительные числа или строки, содержащие только буквы. Если входные данные не соответствуют этим условиям, декоратор выдаст сообщение об ошибке.
 
 ```python
-class Animal:
-    def __init__(self, hp):
-        self.__hp = hp  
-        self.voice = "я животное"
+# Декоратор для проверки условий перед выполнением функции
+def validate_input(condition_func, error_message):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            # Проверяем каждый аргумент с помощью переданной функции condition_func
+            for arg in args:
+                if not condition_func(arg):
+                    print(f"Ошибка: {error_message}")
+                    return
+            # Если все условия выполнены, вызываем функцию
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
 
-    def get_hp(self):
-        return self.__hp
+# Проверяем, что все аргументы - положительные числа
+@validate_input(lambda x: isinstance(x, (int, float)) and x > 0, "Все аргументы должны быть положительными числами")
+def calculate_area(length, width):
+    area = length * width
+    print(f"Площадь: {area}")
+    return area
 
-    def set_hp(self, new_hp):
-        if new_hp >= 0:  
-            self.__hp = new_hp
-        else:
-            print("Значение здоровья не может быть отрицательным")
+# Проверяем, что все аргументы - строки, содержащие только буквы
+@validate_input(lambda x: isinstance(x, str) and x.isalpha(), "Все аргументы должны быть строками, содержащими только буквы")
+def greet(*names):
+    for name in names:
+        print(f"Привет, {name}!")
 
-    def say(self):
-        return self.voice
+# Тестируем декоратор
+calculate_area(5, -3)    # Должна быть ошибка, так как ширина отрицательная
+calculate_area(5, 3)     # Должно успешно вывести площадь
 
-class Dog(Animal):
-    def __init__(self, hp):
-        super().__init__(hp)
-        self.voice = "гав!"
+greet("Алиса", "Боб", "123")  # Должна быть ошибка, так как один аргумент не является буквой
+greet("Алиса", "Боб")         # Должно успешно вывести приветствие
 
-my_animal = Animal(5)
-my_dog = Dog(10)
-
-print(my_animal.say())  
-print(my_dog.say())      
-
-print(my_animal.get_hp())  
-my_animal.set_hp(8)       
-print(my_animal.get_hp())  
-my_animal.set_hp(-3)
 ```
 ### Результат.
 
-![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_8/8_module/S4.png)
+![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_10/10_module/S4.png)
 
 ### Выводы
 
-создаем класс Animal с закрытым атрибутом здоровья (__hp) и методом say(), возвращающим голос животного. Класс Dog наследует от Animal и изменяет голос на "гав!". Программа выводит голос каждого объекта и изменяет здоровье объекта Animal, проверяя на отрицательные значения.
+Создаем декораторы для проверки на определенные условия ввода. Декоратор calculate_area проверяет на неотрицательность введенного числа. Декоратор greet проверяет чтобы аргументы были нечисловыми.
   
 ## Самостоятельная работа №5
-Мы создаем исключение TooShortStringError, которое будет выбрасываться, если функция получает строку, длина которой меньше 5 символов. Это исключение будет использовано в двух разных функциях.
+Создать исключение TooShortStringError, которое будет выбрасываться, если функция получает строку, длина которой меньше 5 символов.
 
 ```python
-class Animal:
-    def __init__(self, hp, sound="я животное"):
-        self.__hp = hp
-        self.sound = sound
+# Создаем собственное исключение для строк, которые слишком короткие
+class TooShortStringError(Exception):
+    """Исключение, выбрасываемое, если строка слишком короткая"""
+    def __init__(self, length):
+        self.length = length
+        super().__init__(f"Ошибка: Длина строки ({length} символов) меньше допустимого минимума")
 
-    def get_hp(self):
-        # Получение текущего значения здоровья
-        return self.__hp
+# Функция, которая принимает строку и выводит ее в верхнем регистре
+def print_uppercase(text):
+    if len(text) < 5:
+        # Если длина строки меньше 5, выбрасываем наше исключение
+        raise TooShortStringError(len(text))
+    print(text.upper())
 
-    def set_hp(self, new_hp):
-        if new_hp >= 0:
-            self.__hp = new_hp
-        else:
-            print("Значение здоровья не может быть отрицательным")
-
-    def say(self):
-        # Базовый метод возвращает звук животного
-        return self.sound
-
-class Dog(Animal):
-    def __init__(self, hp, breed="Unknown"):
-        # Инициализация с вызовом базового конструктора и добавлением породы
-        super().__init__(hp, "гав!")
-        self.breed = breed
-
-    def fetch(self):
-        # Метод, уникальный для класса Dog
-        return f"{self.breed} весело приносит мяч!"
+# Функция, которая добавляет восклицательный знак к строке
+def add_exclamation(text):
+    if len(text) < 5:
+        # Если длина строки меньше 5, выбрасываем наше исключение
+        raise TooShortStringError(len(text))
+    print(text + "!")
 
 
-class Cat(Animal):
-    def __init__(self, hp, color="Unknown"):
-        # Инициализация с вызовом базового конструктора и добавлением цвета
-        super().__init__(hp, "мяу!")
-        self.color = color
+# Тестируем функции
+try:
+    print_uppercase("Hello")   # Успешный вызов
+    print_uppercase("Hi")      # Вызовет исключение TooShortStringError
+except TooShortStringError as e:
+    print(e)
 
-    def climb(self):
-        # Метод, уникальный для класса Cat
-        return f"{self.color} кошка ловко забирается на дерево!"
+try:
+    add_exclamation("Hey!")    # Вызовет исключение TooShortStringError
+except TooShortStringError as e:
+    print(e)
 
+try:
+    add_exclamation("Greetings")  # Успешный вызов
+except TooShortStringError as e:
+    print(e)
 
-animals = [Animal(5), Dog(10, "пес"), Cat(8, "Смурф")]
-
-for animal in animals:
-    print(animal.say())
-    if isinstance(animal, Dog):
-        print(animal.fetch())
-    elif isinstance(animal, Cat):
-        print(animal.climb())
  
 ```
 
 ### Результат.
 
-![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_8/8_module/S5.png)
+![Меню](https://github.com/Tureckij/Software_Engineering/blob/Тема_10/10_module/S5.png)
 
 ### Выводы
 
-Код определяет класс Animal с атрибутами здоровья и звука, и его подклассы Dog и Cat, каждый из которых добавляет уникальные атрибуты и методы: fetch() для собак и climb() для кошек. В цикле выводятся звуки всех животных, а для собак и кошек — их уникальные действия.
+Мы создаем исключение TooShortStringError, которое будет выбрасываться, если функция получает строку, длина которой меньше 5 символов. Это исключение будет использовано в двух разных функциях.
 
 ## Общие выводы по теме
-Поработали с классами, их конструкторами, полиморфизмом и инкапсуляцией, а также наследованием.
+Плотно поработали с декораторами и исключениями, научились создавать свои декораторы. Изучили преимущества декораторов, для чего они нужны.
